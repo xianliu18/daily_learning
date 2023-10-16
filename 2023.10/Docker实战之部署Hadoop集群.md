@@ -1,6 +1,6 @@
 ### Docker-Compose 部署 Hadoop 集群
 #### 1，简化版步骤：
-1，创建目录：`D:\big_data`，准备 [`hadoop-3.2.3.tar.gz`](https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/) 和 [`jdk-8u192-linux-i586.tar.gz`](https://repo.huaweicloud.com/java/jdk/)
+1，创建目录：`D:\big_data`，准备 [`hadoop-3.2.3.tar.gz`](https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/) 和 [`jdk-8u192-linux-i586.tar.gz`](https://repo.huaweicloud.com/java/jdk/) 
 
 2，准备 `Dockerfile` 文件；
 
@@ -292,8 +292,18 @@ hdfs namenode -format
 
 10.3 启动集群
 ```sh
-start-dfs.sh
-start-yarn.sh
+start-all.sh
+```
+
+10.4 重启集群
+```sh
+stop-all.sh
+
+# 删除 临时文件
+rm -rf $HADOOP_HOME/tmp
+
+# 格式化 NameNode
+hdfs namenode -format
 ```
 
 10.4 访问集群：http://localhost:9870
