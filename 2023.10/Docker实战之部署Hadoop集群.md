@@ -1,12 +1,19 @@
 ### Docker-Compose 部署 Hadoop 集群
 #### 1，简化版步骤：
 1，创建目录：`D:\big_data`，准备 [`hadoop-3.2.3.tar.gz`](https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/) 和 [`jdk-8u192-linux-i586.tar.gz`](https://repo.huaweicloud.com/java/jdk/)
+
 2，准备 `Dockerfile` 文件；
+
 3，构建镜像：`docker build -t hadoop .`；
+
 4，创建 `docker-compose.yml`；
+
 5，启动 docker-compose，`docker-compose up -d`；
+
 6，进入 hadoop101 容器内部：`docker exec -it hadoop101 /bin/bash`；
+
 7，免密登录处理；
+
 8，编写同步脚本；
 
 #### 2，详细步骤：
@@ -110,7 +117,9 @@ volumes:
 </details>
 
 5，后台启动 docker-compose，`docker-compose up -d`；
+
 6，进入 hadoop101 容器内部：`docker exec -it hadoop101 /bin/bash`；
+
 7，配置免密登录，**每个服务器**均需要执行：
 
 ```sh
@@ -290,5 +299,6 @@ start-yarn.sh
 10.4 访问集群：http://localhost:9870
 
 <br/>
+
 - 参考资料：
   - [Docker 部署 Hadoop 集群](https://kpretty.tech/archives/docker2)
