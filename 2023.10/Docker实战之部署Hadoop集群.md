@@ -299,10 +299,10 @@ start-all.sh
 ```sh
 stop-all.sh
 
-# 删除 临时文件
+# 删除 临时文件(hadoop101, hadoop102, hadoop103 都需要执行删除)
 rm -rf $HADOOP_HOME/tmp
 
-# 格式化 NameNode
+# 格式化 NameNode(hadoop101, hadoop102, hadoop103 都需要执行格式化)
 hdfs namenode -format
 ```
 
